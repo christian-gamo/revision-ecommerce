@@ -1,7 +1,5 @@
 package com.cpg.pprojects.ecommerce.model;
 
-import com.cpg.pprojects.ecommerce.service.impls.CategoryService;
-
 import java.util.List;
 
 public class Product {
