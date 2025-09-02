@@ -1,13 +1,18 @@
 package com.cpg.pprojects.ecommerce.model;
 
+import java.util.List;
+
 public class Category {
     private Long idCategory;
     private String categoryName;
+    private List<Product> products;
 
-    public Category(Long idCategory, String categoryName) {
+    public Category(Long idCategory, String categoryName, List<Product> products) {
         this.idCategory = idCategory;
         this.categoryName = categoryName;
     }
+
+    public Category() {}
 
     public Long getIdCategory() {
         return idCategory;
@@ -24,4 +29,8 @@ public class Category {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
+
+    public List<Product> getProducts() {return products;}
+
+    public void setProducts(List<Product> products) { this.products = products; }
 }
