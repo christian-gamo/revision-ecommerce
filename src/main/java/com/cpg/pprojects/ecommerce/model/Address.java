@@ -1,7 +1,7 @@
 package com.cpg.pprojects.ecommerce.model;
 
 public class Address {
-    private long idAddress;
+    private Long idAddress;
     private String buildingName;
     private String street;
     private String city;
