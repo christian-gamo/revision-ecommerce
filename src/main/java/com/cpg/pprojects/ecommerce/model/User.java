@@ -15,9 +15,8 @@ public class User {
     private Cart cart;
     private Set<Product> products;
 
-    public User(){
+    public User(){}
 
-    }
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
