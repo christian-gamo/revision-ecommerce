@@ -7,10 +7,10 @@ public class Product {
     private String productName;
     private String description;
     private String image;
-    private Integer quantity;
-    private Double price;
-    private Double specialPrice;
-    private Double discount;
+    private int quantity;
+    private double price;
+    private double specialPrice;
+    private double discount;
 
     private Category category;
     private User user;

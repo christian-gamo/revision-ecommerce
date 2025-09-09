@@ -3,8 +3,9 @@ package com.cpg.pprojects.ecommerce.model;
 import java.util.List;
 
 public class Category {
-    private Long idCategory;
+    private long idCategory;
     private String categoryName;
+
     private List<Product> products;
 
     public Category(Long idCategory, String categoryName, List<Product> products) {
