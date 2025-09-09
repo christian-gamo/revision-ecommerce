@@ -1,13 +1,14 @@
 package com.cpg.pprojects.ecommerce.model;
 
 public class Address {
-    private Long idAddress;
+    private long idAddress;
     private String buildingName;
     private String street;
     private String city;
     private String state;
     private String country;
     private String pincode;
+
     private User user;
 
     public Address() {}
