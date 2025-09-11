@@ -1,4 +1,8 @@
-package com.cpg.pprojects.ecommerce.model;
+package com.cpg.pprojects.ecommerce.entity.order.model;
+
+import com.cpg.pprojects.ecommerce.entity.address.model.Address;
+import com.cpg.pprojects.ecommerce.entity.orderItem.model.OrderItem;
+import com.cpg.pprojects.ecommerce.entity.payment.model.Payment;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

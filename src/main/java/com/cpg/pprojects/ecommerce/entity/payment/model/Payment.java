@@ -1,4 +1,6 @@
-package com.cpg.pprojects.ecommerce.model;
+package com.cpg.pprojects.ecommerce.entity.payment.model;
+
+import com.cpg.pprojects.ecommerce.entity.order.model.Order;
 
 public class Payment {
     private long idPayment;

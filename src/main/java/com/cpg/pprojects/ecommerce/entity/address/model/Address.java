@@ -1,4 +1,6 @@
-package com.cpg.pprojects.ecommerce.model;
+package com.cpg.pprojects.ecommerce.entity.address.model;
+
+import com.cpg.pprojects.ecommerce.entity.user.model.User;
 
 public class Address {
     private long idAddress;

@@ -1,4 +1,6 @@
-package com.cpg.pprojects.ecommerce.model;
+package com.cpg.pprojects.ecommerce.entity.role.model;
+
+import com.cpg.pprojects.ecommerce.entity.AppRole;
 
 public class Role {
     private int idRole;

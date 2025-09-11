@@ -1,4 +1,8 @@
-package com.cpg.pprojects.ecommerce.model;
+package com.cpg.pprojects.ecommerce.entity.product.model;
+
+import com.cpg.pprojects.ecommerce.entity.cartItem.model.CartItem;
+import com.cpg.pprojects.ecommerce.entity.category.model.Category;
+import com.cpg.pprojects.ecommerce.entity.user.model.User;
 
 import java.util.List;
 

@@ -1,4 +1,7 @@
-package com.cpg.pprojects.ecommerce.model;
+package com.cpg.pprojects.ecommerce.entity.orderItem.model;
+
+import com.cpg.pprojects.ecommerce.entity.product.model.Product;
+import com.cpg.pprojects.ecommerce.entity.order.model.Order;
 
 public class OrderItem {
     private long idOrderItem;

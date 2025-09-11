@@ -1,4 +1,7 @@
-package com.cpg.pprojects.ecommerce.model;
+package com.cpg.pprojects.ecommerce.entity.cartItem.model;
+
+import com.cpg.pprojects.ecommerce.entity.cart.model.Cart;
+import com.cpg.pprojects.ecommerce.entity.product.model.Product;
 
 public class CartItem {
     private long idCartItem;

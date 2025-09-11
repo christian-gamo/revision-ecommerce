@@ -1,6 +1,6 @@
 package com.cpg.pprojects.ecommerce.service.impls;
 
-import com.cpg.pprojects.ecommerce.model.Category;
+import com.cpg.pprojects.ecommerce.entity.category.model.Category;
 import com.cpg.pprojects.ecommerce.service.interfaces.ICategoryService;
 import org.springframework.stereotype.Service;
 

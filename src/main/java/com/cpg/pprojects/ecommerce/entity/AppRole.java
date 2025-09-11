@@ -1,4 +1,4 @@
-package com.cpg.pprojects.ecommerce.model;
+package com.cpg.pprojects.ecommerce.entity;
 
 public enum AppRole {
     ROLE_USER,
