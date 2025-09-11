@@ -12,6 +12,6 @@ public interface ICartRepository {
 
     Cart findCartByEmail(String email);
     Cart findCartByEmailAndIdCart(String email, int idCart);
-    List<Cart> findCartsByIdProduct(Long idProduct);
+    List<Cart> findCartsByIdProduct(long idProduct);
 
 }
