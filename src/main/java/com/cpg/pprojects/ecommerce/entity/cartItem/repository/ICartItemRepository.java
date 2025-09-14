@@ -6,7 +6,7 @@ import com.cpg.pprojects.ecommerce.entity.cartItem.model.CartItem;
 import java.util.List;
 
 public interface ICartItemRepository {
-    CartItem findById(int id);
+    CartItem findById(long id);
     List<CartItem> findAll();
     Cart save(Cart cart);
     void delete(Cart cart);

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IAdressRepository {
     List<Address> findAll();
-    Address findById(int id);
+    Address findById(long id);
     Address save(Address address);
     void delete(Address address);
 }
