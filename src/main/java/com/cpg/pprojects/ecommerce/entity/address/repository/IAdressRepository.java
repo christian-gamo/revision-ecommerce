@@ -9,4 +9,6 @@ public interface IAdressRepository {
     Address findById(long id);
     Address save(Address address);
     void delete(Address address);
+
+    List<Address> findByUserId(long idUser);
 }
