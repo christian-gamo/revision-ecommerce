@@ -14,5 +14,4 @@ public class CreateAdressUseCase {
         return adressRepository.save(address);
     }
 
-
 }
