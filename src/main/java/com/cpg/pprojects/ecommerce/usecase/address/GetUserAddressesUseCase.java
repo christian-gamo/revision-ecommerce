@@ -3,15 +3,18 @@ package com.cpg.pprojects.ecommerce.usecase.address;
 import com.cpg.pprojects.ecommerce.domain.address.model.Address;
 import com.cpg.pprojects.ecommerce.domain.address.repository.IAddressRepository;
 
-public class CreateAdressUseCase {
+import java.util.List;
+
+public class GetUserAddressesUseCase {
     private final IAddressRepository addressRepository;
 
-    public CreateAdressUseCase(IAddressRepository addressRepository){
+    public GetUserAddressesUseCase(IAddressRepository addressRepository){
         this.addressRepository = addressRepository;
     }
 
-    public Address execute(Address address) {
-        return addressRepository.save(address);
+    public List<Address> execute(long idUser){
+        return addressRepository.findByUserId(idUser);
     }
+
 
 }
