@@ -1,7 +1,7 @@
 package com.cpg.pprojects.ecommerce.domain.orderItem.model;
 
-import com.cpg.pprojects.ecommerce.domain.product.model.Product;
 import com.cpg.pprojects.ecommerce.domain.order.model.Order;
+import com.cpg.pprojects.ecommerce.domain.product.model.Product;
 
 public class OrderItem {
     private long idOrderItem;
