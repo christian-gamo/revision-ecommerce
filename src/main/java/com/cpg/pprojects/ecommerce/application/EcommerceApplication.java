@@ -1,4 +1,4 @@
-package com.cpg.pprojects.ecommerce;
+package com.cpg.pprojects.ecommerce.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
