@@ -1,7 +1,7 @@
 package com.cpg.pprojects.ecommerce.domain.role.repository;
 
-import com.cpg.pprojects.ecommerce.domain.user.AppRole;
 import com.cpg.pprojects.ecommerce.domain.role.model.Role;
+import com.cpg.pprojects.ecommerce.domain.user.AppRole;
 
 import java.util.List;
 import java.util.Optional;
