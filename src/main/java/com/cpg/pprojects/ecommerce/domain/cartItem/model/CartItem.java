@@ -4,8 +4,8 @@ import com.cpg.pprojects.ecommerce.domain.cart.model.Cart;
 import com.cpg.pprojects.ecommerce.domain.product.model.Product;
 
 public class CartItem {
-    private long idCartItem;
-    private int quantity;
+    private Long idCartItem;
+    private Integer quantity;
     private double discount;
     private double productPrice;
 
@@ -15,8 +15,8 @@ public class CartItem {
     public CartItem() {}
 
     public CartItem(
-            long idCartItem,
-            int quantity,
+            Long idCartItem,
+            Integer quantity,
             double discount,
             double productPrice,
             Cart cart,
@@ -30,19 +30,19 @@ public class CartItem {
         this.product = product;
     }
 
-    public long getIdCartItem() {
+    public Long getIdCartItem() {
         return idCartItem;
     }
 
-    public void setIdCartItem(long idCartItem) {
+    public void setIdCartItem(Long idCartItem) {
         this.idCartItem = idCartItem;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

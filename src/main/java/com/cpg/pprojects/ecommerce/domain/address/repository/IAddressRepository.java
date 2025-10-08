@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public interface IAddressRepository {
     List<Address> findAll();
-    Optional<Address> findById(long id);
+    Optional<Address> findById(Long id);
     Address save(Address address);
     void delete(Address address);
 
-    List<Address> findByUserId(long idUser);
+    List<Address> findByUserId(Long idUser);
 }

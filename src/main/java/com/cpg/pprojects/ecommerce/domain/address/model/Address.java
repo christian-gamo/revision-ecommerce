@@ -3,7 +3,7 @@ package com.cpg.pprojects.ecommerce.domain.address.model;
 import com.cpg.pprojects.ecommerce.domain.user.model.User;
 
 public class Address {
-    private long idAddress;
+    private Long idAddress;
     private String buildingName;
     private String street;
     private String city;
@@ -16,7 +16,7 @@ public class Address {
     public Address() {}
 
     public Address(
-            long idAddress,
+            Long idAddress,
             String buildingName,
             String street,
             String city,
@@ -52,11 +52,11 @@ public class Address {
         this.user = user;
     }
 
-    public long getIdAddress() {
+    public Long getIdAddress() {
         return idAddress;
     }
 
-    public void setIdAddress(long idAddress) {
+    public void setIdAddress(Long idAddress) {
         this.idAddress = idAddress;
     }
 

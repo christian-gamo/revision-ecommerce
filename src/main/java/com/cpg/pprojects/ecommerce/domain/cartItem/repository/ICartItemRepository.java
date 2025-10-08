@@ -6,12 +6,12 @@ import com.cpg.pprojects.ecommerce.domain.cartItem.model.CartItem;
 import java.util.List;
 
 public interface ICartItemRepository {
-    CartItem findById(long id);
+    CartItem findById(Long id);
     List<CartItem> findAll();
     Cart save(Cart cart);
     void delete(Cart cart);
 
-    CartItem findCartItemByIdProductAndIdCart(long idCart, long idProduct);
-    void deleteCartItemByIdProduct(long idCart, long idProduct);
-    void deleteAllByIdCart(long idCart);
+    CartItem findCartItemByIdProductAndIdCart(Long idCart, Long idProduct);
+    void deleteCartItemByIdProduct(Long idCart, Long idProduct);
+    void deleteAllByIdCart(Long idCart);
 }

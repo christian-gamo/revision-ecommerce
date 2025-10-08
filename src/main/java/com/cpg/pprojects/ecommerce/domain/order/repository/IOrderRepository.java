@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IOrderRepository {
 
-    Order findById(long id);
+    Order findById(Long id);
     List<Order> findAll();
     Order save(Order order);
     void delete(Order order);

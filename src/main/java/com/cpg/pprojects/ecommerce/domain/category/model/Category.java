@@ -5,7 +5,7 @@ import com.cpg.pprojects.ecommerce.domain.product.model.Product;
 import java.util.List;
 
 public class Category {
-    private long idCategory;
+    private Long idCategory;
     private String categoryName;
 
     private List<Product> products;

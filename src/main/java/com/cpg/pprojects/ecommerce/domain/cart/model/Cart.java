@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-    private long idCart;
-    private double totalPrice = 0.0;
+    private Long idCart;
+    private Double totalPrice = 0.0;
 
     private User user;
     private List<CartItem> cartItems = new ArrayList<>();

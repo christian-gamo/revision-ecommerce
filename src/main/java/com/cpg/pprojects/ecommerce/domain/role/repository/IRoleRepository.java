@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IRoleRepository {
-    Role findById(long id);
+    Role findById(Long id);
     List<Role> findAll();
     Role save(Role role);
     void delete(Role role);

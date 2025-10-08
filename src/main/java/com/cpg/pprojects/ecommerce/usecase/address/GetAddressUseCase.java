@@ -10,7 +10,7 @@ public class GetAddressUseCase {
     public GetAddressUseCase(IAddressRepository addressRepository) {
         this.addressRepository = addressRepository;
     }
-    public Address execute(long idAddress) {
+    public Address execute(Long idAddress) {
         return addressRepository.findById(idAddress).orElseThrow(() -> new ResourceNotFoundException("Address", "idAddress", idAddress));
     }
 }

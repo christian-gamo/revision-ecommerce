@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private long idOrder;
+    private Long idOrder;
     private String email;
     private LocalDate orderDate;
     private String orderStatus;
-    private double totalAmount;
+    private Double totalAmount;
 
     private List<OrderItem> orderItems = new ArrayList<>();
     private Address address;
@@ -22,11 +22,11 @@ public class Order {
     public Order() {}
 
     public Order(
-            long idOrder,
+            Long idOrder,
             String email,
             LocalDate orderDate,
             String orderStatus,
-            double totalAmount,
+            Double totalAmount,
             List<OrderItem> orderItems,
             Address address,
             Payment payment
@@ -42,11 +42,11 @@ public class Order {
     }
 
 
-    public long getIdOrder() {
+    public Long getIdOrder() {
         return idOrder;
     }
 
-    public void setIdOrder(long idOrder) {
+    public void setIdOrder(Long idOrder) {
         this.idOrder = idOrder;
     }
 
@@ -66,19 +66,17 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public String getOrderStatus() {
-        return orderStatus;
-    }
+    public String getOrderStatus() { return orderStatus; }
 
     public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
     }
 
-    public double getTotalAmount() {
+    public Double getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(double totalAmount) {
+    public void setTotalAmount(Double totalAmount) {
         this.totalAmount = totalAmount;
     }
 

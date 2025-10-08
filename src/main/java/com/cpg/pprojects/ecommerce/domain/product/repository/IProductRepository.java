@@ -6,7 +6,7 @@ import com.cpg.pprojects.ecommerce.domain.user.model.User;
 import java.util.List;
 
 public interface IProductRepository {
-    Product findById(long id);
+    Product findById(Long id);
     List<Product> findAll();
     Product save(Product product);
     void delete(Product product);

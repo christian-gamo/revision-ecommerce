@@ -3,21 +3,21 @@ package com.cpg.pprojects.ecommerce.domain.role.model;
 import com.cpg.pprojects.ecommerce.domain.user.AppRole;
 
 public class Role {
-    private int idRole;
+    private Integer idRole;
     private AppRole roleName;
 
     public Role() {}
 
-    public Role(int idRole, AppRole roleName) {
+    public Role(Integer idRole, AppRole roleName) {
         this.idRole = idRole;
         this.roleName = roleName;
     }
 
-    public int getIdRole() {
+    public Integer getIdRole() {
         return idRole;
     }
 
-    public void setIdRole(int idRole) {
+    public void setIdRole(Integer idRole) {
         this.idRole = idRole;
     }
 

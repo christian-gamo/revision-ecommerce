@@ -5,7 +5,7 @@ import com.cpg.pprojects.ecommerce.domain.payment.model.Payment;
 import java.util.List;
 
 public interface IPaymentRepository {
-    Payment findById(long id);
+    Payment findById(Long id);
     List<Payment> findAll();
     Payment save(Payment payment);
     void delete(Payment payment);

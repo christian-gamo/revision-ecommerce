@@ -15,7 +15,7 @@ public class UpdateAddressUseCase {
         this.userRepository = userRepository;
     }
 
-    public Address execute(long idAddress, Address addressWithUpdatedFields){
+    public Address execute(Long idAddress, Address addressWithUpdatedFields){
         Address addressToBeUpdated = addressRepository.findById(idAddress).orElseThrow(() -> new ResourceNotFoundException("Address", "idAddress", idAddress));
         addressToBeUpdated.setBuildingName(addressWithUpdatedFields.getBuildingName());
         addressToBeUpdated.setStreet(addressWithUpdatedFields.getStreet());

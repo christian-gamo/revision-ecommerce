@@ -4,8 +4,8 @@ import com.cpg.pprojects.ecommerce.domain.order.model.Order;
 import com.cpg.pprojects.ecommerce.domain.product.model.Product;
 
 public class OrderItem {
-    private long idOrderItem;
-    private int quantity;
+    private Long idOrderItem;
+    private Integer quantity;
     private double discount;
     private double orderedProductPrice;
 
@@ -15,8 +15,8 @@ public class OrderItem {
     public OrderItem() {}
 
     public OrderItem(
-            long idOrderItem,
-            int quantity,
+            Long idOrderItem,
+            Integer quantity,
             double discount,
             double orderedProductPrice,
             Product product,
@@ -30,19 +30,19 @@ public class OrderItem {
         this.order = order;
     }
 
-    public long getIdOrderItem() {
+    public Long getIdOrderItem() {
         return idOrderItem;
     }
 
-    public void setIdOrderItem(long idOrderItem) {
+    public void setIdOrderItem(Long idOrderItem) {
         this.idOrderItem = idOrderItem;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
