@@ -12,6 +12,24 @@ public class CartItem {
     private Cart cart;
     private Product product;
 
+    public CartItem() {}
+
+    public CartItem(
+            long idCartItem,
+            int quantity,
+            double discount,
+            double productPrice,
+            Cart cart,
+            Product product
+    ) {
+        this.idCartItem = idCartItem;
+        this.quantity = quantity;
+        this.discount = discount;
+        this.productPrice = productPrice;
+        this.cart = cart;
+        this.product = product;
+    }
+
     public long getIdCartItem() {
         return idCartItem;
     }
