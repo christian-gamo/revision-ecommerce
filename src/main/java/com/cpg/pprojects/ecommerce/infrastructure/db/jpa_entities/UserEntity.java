@@ -1,5 +1,6 @@
 package com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities;
 
+import com.cpg.pprojects.ecommerce.domain.user.model.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -31,7 +32,7 @@ public class UserEntity {
     @NotBlank
     @Size(max = 20)
     @Column(name = "username")
-    private String userName;
+    private String username;
 
     @NotBlank
     @Size(max = 50)
@@ -43,12 +44,6 @@ public class UserEntity {
     @Size(max = 120)
     @Column(name = "password")
     private String password;
-
-    public UserEntity(String userName, String email, String password) {
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-    }
 
     @Getter
     @Setter
@@ -64,5 +59,28 @@ public class UserEntity {
             cascade = {CascadeType.PERSIST, CascadeType.MERGE},
             orphanRemoval = true)
     private Set<ProductEntity> products;
+
+
+    public UserEntity(User user) {
+        this.idUser = user.getIdUser();
+        this.username = user.getUsername();
+        this.email = user.getEmail();
+        this.password = user.getPassword();
+    }
+
+    public UserEntity(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User toUser() {
+        return new User(
+                this.idUser,
+                this.username,
+                this.email,
+                this.password
+        );
+    }
 
 }
