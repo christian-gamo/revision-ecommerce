@@ -4,6 +4,7 @@ import com.cpg.pprojects.ecommerce.domain.address.model.Address;
 import com.cpg.pprojects.ecommerce.domain.address.repository.IAddressRepository;
 import com.cpg.pprojects.ecommerce.domain.user.model.User;
 import com.cpg.pprojects.ecommerce.usecase.address.dto.AddressDTO;
+import com.cpg.pprojects.ecommerce.usecase.exceptions.APIException;
 
 import java.util.List;
 
@@ -15,6 +16,9 @@ public class CreateAdressUseCase {
     }
 
     public AddressDTO execute(AddressDTO addressDTO, User user) {
+        if(addressDTO == null || user == null){
+            throw new APIException("Empty arguments");
+        }
         Address address = new Address(
                 addressDTO.getBuildingName(),
                 addressDTO.getStreet(),
