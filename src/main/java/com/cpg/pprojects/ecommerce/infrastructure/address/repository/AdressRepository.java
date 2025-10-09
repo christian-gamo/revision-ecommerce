@@ -33,7 +33,8 @@ public class AdressRepository implements IAddressRepository {
 
     @Override
     public Optional<Address> findById(Long id) {
-        return Optional.empty();
+        return jpaRepository.findById(id)
+                .map(AddressEntity::toAddress);
     }
 
     @Override
