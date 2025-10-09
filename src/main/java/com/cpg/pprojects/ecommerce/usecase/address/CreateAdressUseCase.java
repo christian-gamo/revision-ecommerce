@@ -17,7 +17,7 @@ public class CreateAdressUseCase {
 
     public AddressDTO execute(AddressDTO addressDTO, User user) {
         if(addressDTO == null || user == null){
-            throw new APIException("Empty arguments");
+            throw new APIException("Null arguments in CreateAdressUseCase");
         }
         Address address = new Address(
                 addressDTO.getBuildingName(),
