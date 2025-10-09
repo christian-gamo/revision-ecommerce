@@ -1,5 +1,7 @@
 package com.cpg.pprojects.ecommerce.usecase.address.dto;
 
+import com.cpg.pprojects.ecommerce.domain.address.model.Address;
+
 public class AddressDTO {
     private Long idAddress;
     private String street;
@@ -21,6 +23,16 @@ public class AddressDTO {
         this.state = state;
         this.country = country;
         this.pincode = pincode;
+    }
+
+    public AddressDTO(Address address) {
+        this.idAddress = address.getIdAddress();
+        this.street = address.getStreet();
+        this.buildingName = address.getBuildingName();
+        this.city = address.getCity();
+        this.state = address.getState();
+        this.country = address.getCountry();
+        this.pincode = address.getPincode();
     }
 
     public Long getIdAddress() {

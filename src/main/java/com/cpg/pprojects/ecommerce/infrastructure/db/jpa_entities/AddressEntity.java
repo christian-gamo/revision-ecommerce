@@ -1,5 +1,6 @@
 package com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities;
 
+import com.cpg.pprojects.ecommerce.domain.address.model.Address;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -45,12 +46,27 @@ public class AddressEntity {
     @JoinColumn(name = "id_user")
     private UserEntity user;
 
-    public AddressEntity(String street, String buildingName, String city, String state, String country, String pincode) {
-        this.street = street;
-        this.buildingName = buildingName;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-        this.pincode = pincode;
+
+    public AddressEntity(Address address) {
+        this.idAddress = address.getIdAddress();
+        this.street = address.getStreet();
+        this.buildingName = address.getBuildingName();
+        this.city = address.getCity();
+        this.state = address.getState();
+        this.country = address.getCountry();
+        this.pincode = address.getPincode();
+        this.user = new UserEntity(address.getUser());
+    }
+
+    public Address toAddress() {
+        return new Address(
+                this.getIdAddress(),
+                this.getBuildingName(),
+                this.getStreet(),
+                this.getCity(),
+                this.getState(),
+                this.getCountry(),
+                this.getPincode(),
+                this.user.toUser());
     }
 }
