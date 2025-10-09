@@ -4,6 +4,7 @@ import com.cpg.pprojects.ecommerce.domain.address.model.Address;
 import com.cpg.pprojects.ecommerce.domain.address.repository.IAddressRepository;
 import com.cpg.pprojects.ecommerce.domain.user.model.User;
 import com.cpg.pprojects.ecommerce.domain.user.repository.IUserRepository;
+import com.cpg.pprojects.ecommerce.usecase.address.dto.AddressDTO;
 import com.cpg.pprojects.ecommerce.usecase.exceptions.ResourceNotFoundException;
 
 public class UpdateAddressUseCase {
@@ -15,20 +16,26 @@ public class UpdateAddressUseCase {
         this.userRepository = userRepository;
     }
 
-    public Address execute(Long idAddress, Address addressWithUpdatedFields){
-        Address addressToBeUpdated = addressRepository.findById(idAddress).orElseThrow(() -> new ResourceNotFoundException("Address", "idAddress", idAddress));
-        addressToBeUpdated.setBuildingName(addressWithUpdatedFields.getBuildingName());
-        addressToBeUpdated.setStreet(addressWithUpdatedFields.getStreet());
-        addressToBeUpdated.setCity(addressWithUpdatedFields.getCity());
-        addressToBeUpdated.setState(addressWithUpdatedFields.getState());
-        addressToBeUpdated.setCountry(addressWithUpdatedFields.getCountry());
-        addressToBeUpdated.setPincode(addressWithUpdatedFields.getPincode());
+    public Address execute(Long idAddress, AddressDTO addressDTO){
+        Address addressToBeUpdated = addressRepository.findById(idAddress)
+                .orElseThrow(() -> new ResourceNotFoundException("Address", "idAddress", idAddress));
+
+        addressToBeUpdated.setStreet(addressDTO.getStreet());
+        addressToBeUpdated.setBuildingName(addressDTO.getBuildingName());
+        addressToBeUpdated.setPincode(addressDTO.getPincode());
+        addressToBeUpdated.setCity(addressDTO.getCity());
+        addressToBeUpdated.setState(addressDTO.getState());
+        addressToBeUpdated.setCountry(addressDTO.getCountry());
 
         Address updatedAddress = addressRepository.save(addressToBeUpdated);
 
-        User user = userRepository.findById(updatedAddress.getUser().getIdUser());
-        user.getAddresses().removeIf(add -> add.getIdAddress() == idAddress);
+        Long idUser = addressToBeUpdated.getUser().getIdUser();
+        User user = userRepository.findById(idUser)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "idUser", idAddress));
+        user.getAddresses().removeIf(address -> address.getIdAddress().equals(idAddress));
         user.getAddresses().add(updatedAddress);
+        userRepository.save(user);
+
         return updatedAddress;
     }
 }
