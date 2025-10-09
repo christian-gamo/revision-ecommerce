@@ -4,9 +4,10 @@ import com.cpg.pprojects.ecommerce.domain.product.model.Product;
 import com.cpg.pprojects.ecommerce.domain.user.model.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IProductRepository {
-    Product findById(Long id);
+    Optional<Product> findById(Long id);
     List<Product> findAll();
     Product save(Product product);
     void delete(Product product);
