@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 public class User {
-    private String idUser;
+    private Long idUser;
     private String username;
     private String email;
     private String password;
@@ -28,11 +28,11 @@ public class User {
         this.password = password;
     }
 
-    public String getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(String idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 
