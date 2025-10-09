@@ -11,5 +11,5 @@ public interface IAddressRepository {
     Address save(Address address);
     void delete(Address address);
 
-    List<Address> findByUserId(Long idUser);
+    List<Address> findByIdUser(Long idUser);
 }

@@ -13,7 +13,7 @@ public class GetUserAddressesUseCase {
     }
 
     public List<Address> execute(Long idUser){
-        return addressRepository.findByUserId(idUser);
+        return addressRepository.findByIdUser(idUser);
     }
 
 

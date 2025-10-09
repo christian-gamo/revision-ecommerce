@@ -6,8 +6,10 @@ import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities.AddressEntity;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_repository.IAdressJpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 public class AdressRepository implements IAddressRepository {
@@ -21,7 +23,12 @@ public class AdressRepository implements IAddressRepository {
     @Override
     public List<Address> findAll() {
         List<AddressEntity> addressEntities = jpaRepository.findAll();
-        return null;
+        if (addressEntities.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return addressEntities.stream()
+                .map(AddressEntity::toAddress)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -40,7 +47,7 @@ public class AdressRepository implements IAddressRepository {
     }
 
     @Override
-    public List<Address> findByUserId(Long idUser) {
+    public List<Address> findByIdUser(Long idUser) {
         return List.of();
     }
 
