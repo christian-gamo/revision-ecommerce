@@ -16,7 +16,7 @@ public class UpdateAddressUseCase {
         this.userRepository = userRepository;
     }
 
-    public Address execute(Long idAddress, AddressDTO addressDTO){
+    public AddressDTO execute(Long idAddress, AddressDTO addressDTO){
         Address addressToBeUpdated = addressRepository.findById(idAddress)
                 .orElseThrow(() -> new ResourceNotFoundException("Address", "idAddress", idAddress));
 
@@ -36,6 +36,6 @@ public class UpdateAddressUseCase {
         user.getAddresses().add(updatedAddress);
         userRepository.save(user);
 
-        return updatedAddress;
+        return new AddressDTO(updatedAddress);
     }
 }
