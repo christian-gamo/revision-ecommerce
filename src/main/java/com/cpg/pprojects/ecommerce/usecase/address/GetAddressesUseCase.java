@@ -15,7 +15,7 @@ public class GetAddressesUseCase {
         this.addressRepository = addressRepository;
     }
 
-    public List<AddressDTO> getAddresses(){
+    public List<AddressDTO> execute(){
         List<Address> addresses = addressRepository.findAll();
         if (addresses.isEmpty()) {
             return Collections.emptyList();
