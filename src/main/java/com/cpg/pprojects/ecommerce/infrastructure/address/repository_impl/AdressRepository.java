@@ -1,4 +1,4 @@
-package com.cpg.pprojects.ecommerce.infrastructure.address.repository;
+package com.cpg.pprojects.ecommerce.infrastructure.address.repository_impl;
 
 import com.cpg.pprojects.ecommerce.domain.address.model.Address;
 import com.cpg.pprojects.ecommerce.domain.address.repository.IAddressRepository;
