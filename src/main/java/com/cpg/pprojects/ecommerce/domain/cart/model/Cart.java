@@ -15,11 +15,17 @@ public class Cart {
 
     public Cart() {}
 
-    public Cart(Long idCart, User user,  List<CartItem> cartItems, Double totalPrice) {
+    public Cart(Long idCart, Double totalPrice, User user, List<CartItem> cartItems) {
         this.idCart = idCart;
+        this.totalPrice = totalPrice;
         this.user = user;
         this.cartItems = cartItems;
+    }
+
+    public Cart(Long idCart, Double totalPrice, User user) {
+        this.idCart = idCart;
         this.totalPrice = totalPrice;
+        this.user = user;
     }
 
     public Long getIdCart() {

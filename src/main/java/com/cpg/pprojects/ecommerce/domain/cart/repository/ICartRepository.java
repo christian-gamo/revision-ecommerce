@@ -12,7 +12,7 @@ public interface ICartRepository {
     void delete(Cart cart);
 
     Cart findCartByEmail(String email);
-    Cart findCartByEmailAndIdCart(String email, int idCart);
+    Cart findCartByEmailAndIdCart(String email, Long idCart);
     List<Cart> findCartsByIdProduct(Long idProduct);
 
 }

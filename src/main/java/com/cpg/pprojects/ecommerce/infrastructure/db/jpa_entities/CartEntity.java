@@ -1,5 +1,6 @@
 package com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities;
 
+import com.cpg.pprojects.ecommerce.domain.cart.model.Cart;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,4 +31,18 @@ public class CartEntity {
     private List<CartItemEntity> cartItems = new ArrayList<>();
 
     private Double totalPrice = 0.0;
+
+    public CartEntity(Cart cart){
+        this.totalPrice = cart.getTotalPrice();
+        this.user = new UserEntity(cart.getUser());
+    }
+
+    public Cart toCart(){
+        return new Cart(
+                this.getIdCart(),
+                this.getTotalPrice(),
+                this.getUser().toUser()
+        );
+    }
+
 }
