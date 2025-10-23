@@ -18,13 +18,15 @@ public class GetUserAddressesUseCase {
     }
 
     public List<AddressDTO> execute(User user){
+
         if(user == null){
             throw new APIException("User is null");
         }
         if (user.getAddresses() == null) {
             return Collections.emptyList();
         }
-        List<Address> addresses = user.getAddresses();
+
+        List<Address> addresses = addressRepository.findAllByUser(user);
         return addresses.stream()
                 .map(AddressDTO::new)
                 .collect(Collectors.toList());
