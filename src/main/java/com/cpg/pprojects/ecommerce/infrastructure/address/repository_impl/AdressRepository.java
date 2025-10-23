@@ -29,7 +29,8 @@ public class AdressRepository implements IAddressRepository {
         if (addressEntities.isEmpty()) {
             return Collections.emptyList();
         }
-        return addressEntities.stream()
+        return addressEntities
+                .stream()
                 .map(AddressEntity::toAddress)
                 .collect(Collectors.toList());
     }
