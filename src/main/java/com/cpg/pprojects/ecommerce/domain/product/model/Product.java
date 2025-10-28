@@ -7,7 +7,7 @@ import com.cpg.pprojects.ecommerce.domain.user.model.User;
 import java.util.List;
 
 public class Product {
-    private String idProduct;
+    private Long idProduct;
     private String productName;
     private String description;
     private String image;
@@ -23,7 +23,7 @@ public class Product {
     public Product() {}
 
     public Product(
-            String idProduct,
+            Long idProduct,
             String productName,
             String description,
             String image,
@@ -48,11 +48,11 @@ public class Product {
         this.cartItems = cartItems;
     }
 
-    public String getIdProduct() {
+    public Long getIdProduct() {
         return idProduct;
     }
 
-    public void setIdProduct(String idProduct) {
+    public void setIdProduct(Long idProduct) {
         this.idProduct = idProduct;
     }
 

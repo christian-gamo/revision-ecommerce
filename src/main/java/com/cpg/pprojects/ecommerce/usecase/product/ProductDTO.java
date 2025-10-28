@@ -1,5 +1,7 @@
 package com.cpg.pprojects.ecommerce.usecase.product;
 
+import com.cpg.pprojects.ecommerce.domain.product.model.Product;
+
 public class ProductDTO {
     private Long idProduct;
     private String productName;
@@ -23,6 +25,17 @@ public class ProductDTO {
         this.price = price;
         this.discount = discount;
         this.specialPrice = specialPrice;
+    }
+
+    public ProductDTO(Product product){
+        this.idProduct = product.getIdProduct();
+        this.productName = product.getProductName();
+        this.image = product.getImage();
+        this.description = product.getDescription();
+        this.quantity = product.getQuantity();
+        this.price = product.getPrice();
+        this.discount = product.getDiscount();
+        this.specialPrice = product.getSpecialPrice();
     }
 
     public Long getIdProduct() {

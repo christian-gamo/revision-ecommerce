@@ -1,5 +1,6 @@
 package com.cpg.pprojects.ecommerce.usecase.cart.dto;
 
+import com.cpg.pprojects.ecommerce.domain.cart.model.Cart;
 import com.cpg.pprojects.ecommerce.usecase.product.ProductDTO;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,13 @@ public class CartDTO {
         this.totalPrice = totalPrice;
         this.products = products;
     }
+
+    public CartDTO(Cart cart){
+        this.idCart = cart.getIdCart();
+        this.totalPrice = cart.getTotalPrice();
+    }
+
+
 
     public Long getIdCart() {
         return idCart;

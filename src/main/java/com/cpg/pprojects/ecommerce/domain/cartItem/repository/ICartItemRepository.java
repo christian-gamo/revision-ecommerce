@@ -9,10 +9,10 @@ import java.util.Optional;
 public interface ICartItemRepository {
     Optional<CartItem> findById(Long id);
     List<CartItem> findAll();
-    Cart save(Cart cart);
-    void delete(Cart cart);
+    Cart save(CartItem cart);
+    void delete(CartItem cart);
 
-    CartItem findCartItemByIdProductAndIdCart(Long idCart, Long idProduct);
+    CartItem findCartItemByIdCartAndIdProduct(Long idCart, Long idProduct);
     void deleteCartItemByIdProduct(Long idCart, Long idProduct);
     void deleteAllByIdCart(Long idCart);
 }
