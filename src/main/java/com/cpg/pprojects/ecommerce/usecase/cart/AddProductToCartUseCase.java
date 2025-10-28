@@ -74,11 +74,13 @@ public class AddProductToCartUseCase {
 
         CartDTO cartDTO = new CartDTO(savedCart);
         List<CartItem> cartItems = cart.getCartItems();
-        Stream<ProductDTO> productStream = cartItems.stream().map(item -> {
-            ProductDTO productDTO = new ProductDTO(item.getProduct());
-            productDTO.setQuantity(item.getQuantity());
-            return productDTO;
-        });
+        Stream<ProductDTO> productStream = cartItems.stream().map(
+                item -> {
+                    ProductDTO productDTO = new ProductDTO(item.getProduct());
+                    productDTO.setQuantity(item.getQuantity());
+                    return productDTO;
+                }
+        );
         cartDTO.setProducts(productStream.toList());
 
         return cartDTO;
