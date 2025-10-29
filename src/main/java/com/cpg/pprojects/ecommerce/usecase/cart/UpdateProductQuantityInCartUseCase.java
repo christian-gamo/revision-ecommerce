@@ -39,7 +39,7 @@ public class UpdateProductQuantityInCartUseCase {
         );
     }
 
-    public CartDTO updateProductQuantityInCart(String email, Long idProduct, Integer quantity){
+    private CartDTO updateProductQuantityInCart(String email, Long idProduct, Integer quantity){
         Cart userCart = cartRepository.findCartByEmail(email);
         Long idCart  = userCart.getIdCart();
 
