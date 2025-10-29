@@ -32,7 +32,7 @@ public class AdressRepository implements IAddressRepository {
         return addressEntities
                 .stream()
                 .map(AddressEntity::toAddress)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -58,7 +58,7 @@ public class AdressRepository implements IAddressRepository {
         return addressJpaRepository.findAllByUser(new UserEntity(user))
                 .stream()
                 .map(AddressEntity::toAddress)
-                .collect(Collectors.toList());
+                .toList();
     }
 
 }

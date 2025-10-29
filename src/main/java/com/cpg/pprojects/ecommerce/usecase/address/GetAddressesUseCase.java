@@ -22,6 +22,6 @@ public class GetAddressesUseCase {
         }
         return addresses.stream()
                 .map(AddressDTO::new)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

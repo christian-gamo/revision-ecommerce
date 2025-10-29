@@ -28,7 +28,7 @@ public class CartRepository implements ICartRepository {
         return cartEntities
                 .stream()
                 .map(CartEntity::toCart)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

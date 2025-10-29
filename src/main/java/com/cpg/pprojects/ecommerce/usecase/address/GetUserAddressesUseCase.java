@@ -29,7 +29,7 @@ public class GetUserAddressesUseCase {
         List<Address> addresses = addressRepository.findAllByUser(user);
         return addresses.stream()
                 .map(AddressDTO::new)
-                .collect(Collectors.toList());
+                .toList();
     }
 
 }
