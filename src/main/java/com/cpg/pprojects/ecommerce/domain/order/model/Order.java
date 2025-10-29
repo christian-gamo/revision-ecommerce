@@ -1,12 +1,9 @@
 package com.cpg.pprojects.ecommerce.domain.order.model;
 
 import com.cpg.pprojects.ecommerce.domain.address.model.Address;
-import com.cpg.pprojects.ecommerce.domain.orderItem.model.OrderItem;
 import com.cpg.pprojects.ecommerce.domain.payment.model.Payment;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Order {
     private Long idOrder;
@@ -15,7 +12,6 @@ public class Order {
     private String orderStatus;
     private Double totalAmount;
 
-    private List<OrderItem> orderItems = new ArrayList<>();
     private Address address;
     private Payment payment;
 
@@ -27,7 +23,6 @@ public class Order {
             LocalDate orderDate,
             String orderStatus,
             Double totalAmount,
-            List<OrderItem> orderItems,
             Address address,
             Payment payment
     ) {
@@ -36,7 +31,6 @@ public class Order {
         this.orderDate = orderDate;
         this.orderStatus = orderStatus;
         this.totalAmount = totalAmount;
-        this.orderItems = orderItems;
         this.address = address;
         this.payment = payment;
     }
@@ -78,14 +72,6 @@ public class Order {
 
     public void setTotalAmount(Double totalAmount) {
         this.totalAmount = totalAmount;
-    }
-
-    public List<OrderItem> getOrderItems() {
-        return orderItems;
-    }
-
-    public void setOrderItems(List<OrderItem> orderItems) {
-        this.orderItems = orderItems;
     }
 
     public Address getAddress() {

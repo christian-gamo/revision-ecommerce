@@ -11,16 +11,8 @@ public class Cart {
     private Double totalPrice = 0.0;
 
     private User user;
-    private List<CartItem> cartItems = new ArrayList<>();
 
     public Cart() {}
-
-    public Cart(Long idCart, Double totalPrice, User user, List<CartItem> cartItems) {
-        this.idCart = idCart;
-        this.totalPrice = totalPrice;
-        this.user = user;
-        this.cartItems = cartItems;
-    }
 
     public Cart(Long idCart, Double totalPrice, User user) {
         this.idCart = idCart;
@@ -42,14 +34,6 @@ public class Cart {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public List<CartItem> getCartItems() {
-        return cartItems;
-    }
-
-    public void setCartItems(List<CartItem> cartItems) {
-        this.cartItems = cartItems;
     }
 
     public Double getTotalPrice() {

@@ -16,9 +16,6 @@ public class User {
     private String password;
 
     private Set<Role> roles;
-    private List<Address> addresses = new ArrayList<>();
-    private Cart cart;
-    private Set<Product> products;
 
     public User(){}
 
@@ -28,7 +25,6 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
 
     public Long getIdUser() {
         return idUser;
@@ -68,29 +64,5 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
-
-    public List<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
-    }
-
-    public Cart getCart() {
-        return cart;
-    }
-
-    public void setCart(Cart cart) {
-        this.cart = cart;
-    }
-
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
     }
 }

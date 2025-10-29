@@ -18,7 +18,6 @@ public class Product {
 
     private Category category;
     private User user;
-    private List<CartItem> cartItems;
 
     public Product() {}
 
@@ -32,8 +31,7 @@ public class Product {
             double specialPrice,
             double discount,
             Category category,
-            User user,
-            List<CartItem> cartItems
+            User user
     ){
         this.idProduct = idProduct;
         this.productName = productName;
@@ -45,7 +43,6 @@ public class Product {
         this.discount = discount;
         this.category = category;
         this.user = user;
-        this.cartItems = cartItems;
     }
 
     public Long getIdProduct() {
@@ -128,11 +125,4 @@ public class Product {
         this.user = user;
     }
 
-    public List<CartItem> getCartItems() {
-        return cartItems;
-    }
-
-    public void setCartItems(List<CartItem> cartItems) {
-        this.cartItems = cartItems;
-    }
 }
