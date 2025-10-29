@@ -31,7 +31,7 @@ public class GetAllCartsUseCase {
                                 ProductDTO productDTO = new ProductDTO(cartItem.getProduct());
                                 productDTO.setQuantity(cartItem.getQuantity());
                                 return productDTO;
-                            }).collect(Collectors.toList());
+                            }).toList();
                     cartDTO.setProducts(products);
                     return cartDTO;
                 }).toList();
