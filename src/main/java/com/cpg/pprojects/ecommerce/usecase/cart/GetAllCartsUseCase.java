@@ -21,20 +21,20 @@ public class GetAllCartsUseCase {
         if (carts.isEmpty()) {
             throw new APIException("No cart exists");
         }
-        List<CartDTO> cartDTOs = carts.stream().map(cart -> {
-            CartDTO cartDTO = new CartDTO(cart);
-
-            List<ProductDTO> products = cart.getCartItems().stream().map(cartItem -> {
-                ProductDTO productDTO = new ProductDTO(cartItem.getProduct());
-                productDTO.setQuantity(cartItem.getQuantity());
-                return productDTO;
-            }).collect(Collectors.toList());
-
-
-            cartDTO.setProducts(products);
-            return cartDTO;
-
-        }).toList();
+        List<CartDTO> cartDTOs = carts
+                .stream()
+                .map(cart -> {
+                    CartDTO cartDTO = new CartDTO(cart);
+                    List<ProductDTO> products = cart.getCartItems()
+                            .stream()
+                            .map(cartItem -> {
+                                ProductDTO productDTO = new ProductDTO(cartItem.getProduct());
+                                productDTO.setQuantity(cartItem.getQuantity());
+                                return productDTO;
+                            }).collect(Collectors.toList());
+                    cartDTO.setProducts(products);
+                    return cartDTO;
+                }).toList();
         return cartDTOs;
     }
 }
