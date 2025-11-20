@@ -11,8 +11,6 @@ public class Payment {
     private String pgResponseMessage;
     private String pgName;
 
-    private Order order;
-
     public Payment() {}
 
     public Payment(
@@ -28,7 +26,6 @@ public class Payment {
         this.pgStatus = pgStatus;
         this.pgResponseMessage = pgResponseMessage;
         this.pgName = pgName;
-        this.order = order;
     }
 
     public Payment(
@@ -93,13 +90,5 @@ public class Payment {
 
     public void setPgName(String pgName) {
         this.pgName = pgName;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
     }
 }
