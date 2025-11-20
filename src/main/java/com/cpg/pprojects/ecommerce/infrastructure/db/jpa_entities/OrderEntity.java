@@ -25,20 +25,21 @@ public class OrderEntity {
     @Column(nullable = false)
     private String email;
 
+    private LocalDate orderDate;
+    private Double totalAmount;
+    private String orderStatus;
+
+
     @OneToMany(mappedBy = "order", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     private List<OrderItemEntity> orderItems = new ArrayList<>();
 
-    private LocalDate orderDate;
+    @ManyToOne
+    @JoinColumn(name = "id_address")
+    private AddressEntity address;
 
     @OneToOne
     @JoinColumn(name = "id_payment")
     private PaymentEntity payment;
 
-    private Double totalAmount;
-    private String orderStatus;
 
-    // Reference to Address
-    @ManyToOne
-    @JoinColumn(name = "id_address")
-    private AddressEntity address;
 }

@@ -1,5 +1,6 @@
 package com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities;
 
+import com.cpg.pprojects.ecommerce.domain.cartItem.model.CartItem;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +15,9 @@ public class CartItemEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCartItem;
+    private Integer quantity;
+    private double discount;
+    private double productPrice;
 
     @ManyToOne
     @JoinColumn(name = "id_cart")
@@ -23,7 +27,14 @@ public class CartItemEntity {
     @JoinColumn(name = "id_product")
     private ProductEntity product;
 
-    private Integer quantity;
-    private double discount;
-    private double productPrice;
+    public CartItemEntity(CartItem cartItem) {
+        this.idCartItem = cartItem.getIdCartItem();
+
+        this.quantity = cartItem.getQuantity();
+        this.discount = cartItem.getDiscount();
+        this.productPrice = cartItem.getProduct().getPrice();
+
+        this.cart = new CartEntity(cartItem.getCart());
+        this.product = new ProductEntity(cartItem.getProduct());
+    }
 }

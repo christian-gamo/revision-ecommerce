@@ -18,9 +18,6 @@ public class PaymentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPayment;
 
-    @OneToOne(mappedBy = "payment", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-    private OrderEntity order;
-
     @NotBlank
     @Size(min = 4, message = "Payment method must contain at least 4 characters")
     private String paymentMethod;
@@ -30,6 +27,9 @@ public class PaymentEntity {
     private String pgResponseMessage;
 
     private String pgName;
+
+    @OneToOne(mappedBy = "payment", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    private OrderEntity order;
 
 
     public PaymentEntity(String paymentMethod, String idPgPayment, String pgStatus,
