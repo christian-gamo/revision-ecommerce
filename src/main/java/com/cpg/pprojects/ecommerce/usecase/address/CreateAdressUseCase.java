@@ -28,10 +28,6 @@ public class CreateAdressUseCase {
                 addressDTO.getPincode(),
                 user
         );
-        List<Address> userAddresses = user.getAddresses();
-        userAddresses.add(address);
-        user.setAddresses(userAddresses);
-
         Address savedAddress = addressRepository.save(address);
 
         return new AddressDTO(savedAddress);
