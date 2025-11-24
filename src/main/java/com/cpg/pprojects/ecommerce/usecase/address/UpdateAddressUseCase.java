@@ -29,13 +29,6 @@ public class UpdateAddressUseCase {
 
         Address updatedAddress = addressRepository.save(addressToBeUpdated);
 
-        Long idUser = addressToBeUpdated.getUser().getIdUser();
-        User user = userRepository.findById(idUser)
-                .orElseThrow(() -> new ResourceNotFoundException("User", "idUser", idAddress));
-        user.getAddresses().removeIf(address -> address.getIdAddress().equals(idAddress));
-        user.getAddresses().add(updatedAddress);
-        userRepository.save(user);
-
         return new AddressDTO(updatedAddress);
     }
 }
