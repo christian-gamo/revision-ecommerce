@@ -8,7 +8,6 @@ import com.cpg.pprojects.ecommerce.usecase.exceptions.APIException;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GetUserAddressesUseCase {
     private final IAddressRepository addressRepository;
@@ -22,11 +21,12 @@ public class GetUserAddressesUseCase {
         if(user == null){
             throw new APIException("User is null");
         }
-        if (user.getAddresses() == null) {
-            return Collections.emptyList();
-        }
 
         List<Address> addresses = addressRepository.findAllByUser(user);
+
+        if(addresses == null || addresses.isEmpty()){
+            return Collections.emptyList();
+        }
         return addresses.stream()
                 .map(AddressDTO::new)
                 .toList();
