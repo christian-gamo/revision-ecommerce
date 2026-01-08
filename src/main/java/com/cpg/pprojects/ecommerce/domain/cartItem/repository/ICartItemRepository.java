@@ -12,6 +12,7 @@ public interface ICartItemRepository {
     CartItem save(CartItem cart);
     void delete(CartItem cart);
 
+    List<CartItem> findAllByCart(Cart cart);
     CartItem findCartItemByIdCartAndIdProduct(Long idCart, Long idProduct);
     void deleteCartItemByIdCartAndIdProduct(Long idCart, Long idProduct);
     void deleteAllByIdCart(Long idCart);

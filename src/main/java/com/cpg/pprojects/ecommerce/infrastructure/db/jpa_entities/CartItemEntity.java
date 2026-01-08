@@ -37,4 +37,16 @@ public class CartItemEntity {
         this.cart = new CartEntity(cartItem.getCart());
         this.product = new ProductEntity(cartItem.getProduct());
     }
+
+    public CartItem toCartItem() {
+        return new CartItem(
+                this.getIdCartItem(),
+                this.getQuantity(),
+                this.getDiscount(),
+                this.getProductPrice(),
+                this.cart.toCart(),
+                this.product.toProduct()
+        );
+    }
+
 }

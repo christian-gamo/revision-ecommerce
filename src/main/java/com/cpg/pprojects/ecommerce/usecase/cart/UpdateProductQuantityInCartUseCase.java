@@ -68,6 +68,7 @@ public class UpdateProductQuantityInCartUseCase {
             throw new APIException("The resulting quantity cannot be negative.");
         }
         if (newQuantity == 0){
+            //Same as deleteProductFromCart use case
             cart.setTotalPrice(
                     cart.getTotalPrice() - (cartItem.getProductPrice() * cartItem.getQuantity())
             );
@@ -87,13 +88,12 @@ public class UpdateProductQuantityInCartUseCase {
         }
 
         CartDTO cartDTO = new CartDTO(cart);
-        List<CartItem> cartItems = cart.getCartItems();
-        Stream<ProductDTO> productStream = cartItems.stream().map(item -> {
-            ProductDTO prd = new ProductDTO(item.getProduct());
-            prd.setQuantity(item.getQuantity());
-            return prd;
-        });
-        cartDTO.setProducts(productStream.toList());
+
+        List<CartItem> cartItems = cartItemRepository.findAllByCart(cart);
+        List<ProductDTO> products = cartItems.stream()
+                .map(cartItemFromUpdatedCart -> new ProductDTO(cartItemFromUpdatedCart.getProduct()))
+                .toList();
+        cartDTO.setProducts(products);
 
         return cartDTO;
     }

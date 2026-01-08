@@ -37,11 +37,14 @@ public class UpdateProductInCartsUseCase {
             throw new APIException("Product " + product.getProductName() + " not available in the cart!!!");
         }
 
+        //remove old price of product from cart
         double cartPrice = cart.getTotalPrice()
                 - (cartItem.getProductPrice() * cartItem.getQuantity());
 
+        //set new actual price from product into cartItem
         cartItem.setProductPrice(product.getSpecialPrice());
 
+        //set new price of product into cart
         cart.setTotalPrice(cartPrice
                 + (cartItem.getProductPrice() * cartItem.getQuantity()));
 

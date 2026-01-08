@@ -66,20 +66,28 @@ public class AddProductToCartUseCase {
         newCartItem.setProductPrice(product.getSpecialPrice());
         cartItemRepository.save(newCartItem);
 
-        product.setQuantity(product.getQuantity());
+        //If reduce stock when product is added to cart
+        //product.setQuantity(product.getQuantity() - quantity);
 
         cart.setTotalPrice(cart.getTotalPrice() + (product.getSpecialPrice() * quantity));
 
         Cart savedCart = cartRepository.save(cart);
 
         CartDTO cartDTO = new CartDTO(savedCart);
-        List<CartItem> cartItems = cart.getCartItems();
-        Stream<ProductDTO> productStream = cartItems.stream().map(
-                item -> {
-                    ProductDTO productDTO = new ProductDTO(item.getProduct());
-                    productDTO.setQuantity(item.getQuantity());
-                    return productDTO;
-                }
+        List<CartItem> cartItems = cartItemRepository.findAllByCart(cart);
+        return fillCartDTO(cartDTO, cartItems);
+    }
+
+    static CartDTO fillCartDTO(CartDTO cartDTO, List<CartItem> cartItems) {
+        Stream<ProductDTO> productStream = cartItems
+                .stream()
+                .map(
+                        cartItem ->
+                        {
+                            ProductDTO productDTO = new ProductDTO(cartItem.getProduct());
+                            productDTO.setQuantity(cartItem.getQuantity());
+                            return productDTO;
+                        }
         );
         cartDTO.setProducts(productStream.toList());
 
