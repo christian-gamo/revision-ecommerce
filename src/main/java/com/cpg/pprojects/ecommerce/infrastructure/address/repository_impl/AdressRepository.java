@@ -6,13 +6,11 @@ import com.cpg.pprojects.ecommerce.domain.user.model.User;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities.AddressEntity;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities.UserEntity;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_repository.IAdressJpaRepository;
-import com.stripe.model.tax.Registration;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Repository
 public class AdressRepository implements IAddressRepository {
