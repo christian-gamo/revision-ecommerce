@@ -9,8 +9,8 @@ import java.util.Optional;
 public interface ICartItemRepository {
     Optional<CartItem> findById(Long id);
     List<CartItem> findAll();
-    CartItem save(CartItem cart);
-    void delete(CartItem cart);
+    CartItem save(CartItem cartItem);
+    void delete(CartItem cartItem);
 
     List<CartItem> findAllByCart(Cart cart);
     CartItem findCartItemByIdCartAndIdProduct(Long idCart, Long idProduct);

@@ -7,6 +7,7 @@ import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities.CartEntity;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities.CartItemEntity;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_repository.ICartItemJpaRepository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,17 +25,27 @@ public class CartItemRepository implements ICartItemRepository {
 
     @Override
     public List<CartItem> findAll() {
-        return List.of();
+        List<CartItemEntity> cartItemEntities = cartItemJpaRepository.findAll();
+
+        if(cartItemEntities.isEmpty()){
+            return Collections.emptyList();
+        }
+
+
+        return cartItemEntities
+                .stream()
+                .map(CartItemEntity::toCartItem)
+                .toList();
     }
 
     @Override
-    public CartItem save(CartItem cart) {
-        return null;
+    public CartItem save(CartItem cartItem) {
+        return cartItemJpaRepository.save(new CartItemEntity(cartItem)).toCartItem();
     }
 
     @Override
-    public void delete(CartItem cart) {
-
+    public void delete(CartItem cartItem) {
+        cartItemJpaRepository.delete(new CartItemEntity(cartItem));
     }
 
     @Override
@@ -47,21 +58,21 @@ public class CartItemRepository implements ICartItemRepository {
 
     @Override
     public CartItem findCartItemByIdCartAndIdProduct(Long idCart, Long idProduct) {
-        return null;
+        return cartItemJpaRepository.findCartItemByIdCartAndIdProduct(idCart, idProduct).toCartItem();
     }
 
     @Override
     public void deleteCartItemByIdCartAndIdProduct(Long idCart, Long idProduct) {
-
+        cartItemJpaRepository.deleteCartItemByIdCartAndIdProduct(idCart, idProduct);
     }
 
     @Override
     public void deleteAllByIdCart(Long idCart) {
-
+        cartItemJpaRepository.deleteAllByIdCart(idCart);
     }
 
     @Override
     public void deleteById(Long id) {
-
+        cartItemJpaRepository.deleteById(id);
     }
 }
