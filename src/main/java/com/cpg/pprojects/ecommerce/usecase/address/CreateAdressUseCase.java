@@ -6,8 +6,6 @@ import com.cpg.pprojects.ecommerce.domain.user.model.User;
 import com.cpg.pprojects.ecommerce.usecase.address.dto.AddressDTO;
 import com.cpg.pprojects.ecommerce.usecase.exceptions.APIException;
 
-import java.util.List;
-
 public class CreateAdressUseCase {
     private final IAddressRepository addressRepository;
 
