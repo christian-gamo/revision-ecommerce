@@ -36,7 +36,7 @@ public class CreateOrUpdateCartWithItemsUseCase {
         );
     }
 
-    public String createOrUpdateCartWithItems(List<CartItemDTO> cartItems, User user) {
+    private String createOrUpdateCartWithItems(List<CartItemDTO> cartItems, User user) {
 
         // Check if an existing cart is available or create a new one
         Cart existingCart = cartRepository.findCartByEmail(user.getEmail());
