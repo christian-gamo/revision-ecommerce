@@ -1,4 +1,4 @@
-package com.cpg.pprojects.ecommerce.infrastructure.config;
+package com.cpg.pprojects.ecommerce.infrastructure.util;
 
 import com.cpg.pprojects.ecommerce.usecase.common.dto.APIResponse;
 import com.cpg.pprojects.ecommerce.usecase.exceptions.APIException;
