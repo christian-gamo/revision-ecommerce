@@ -8,7 +8,6 @@ import com.cpg.pprojects.ecommerce.usecase.exceptions.APIException;
 import com.cpg.pprojects.ecommerce.usecase.product.ProductDTO;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GetAllCartsUseCase {
     private final ICartRepository cartRepository;
@@ -22,7 +21,7 @@ public class GetAllCartsUseCase {
         this.cartItemRepository = cartItemRepository;
     }
 
-    public List<CartDTO> getAllCarts(){
+    public List<CartDTO> execute(){
         List<Cart>  carts = cartRepository.findAll();
         if (carts.isEmpty()) {
             throw new APIException("No cart exists");

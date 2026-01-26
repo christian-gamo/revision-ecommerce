@@ -10,19 +10,20 @@ import com.cpg.pprojects.ecommerce.usecase.product.ProductDTO;
 
 import java.util.List;
 
-public class GetCartUseCase {
+public class GetCartByEmailUseCase {
     private final ICartRepository cartRepository;
     private final ICartItemRepository cartItemRepository;
 
-    public GetCartUseCase(ICartRepository cartRepository, ICartItemRepository cartItemRepository) {
+    public GetCartByEmailUseCase(ICartRepository cartRepository, ICartItemRepository cartItemRepository) {
         this.cartRepository = cartRepository;
         this.cartItemRepository = cartItemRepository;
     }
 
-    public CartDTO execute(String email, Long idCart) {
-        Cart cart = cartRepository.findCartByEmailAndIdCart(email, idCart);
+    public CartDTO execute(String email) {
+
+        Cart cart = cartRepository.findCartByEmail(email);
         if (cart == null){
-            throw new ResourceNotFoundException("Cart", "idCart", idCart);
+            throw new ResourceNotFoundException("Cart", "email", email);
         }
         CartDTO cartDTO = new CartDTO(cart);
 
