@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class AdressRepository implements IAddressRepository {
+public class AddressRepository implements IAddressRepository {
 
     IAdressJpaRepository addressJpaRepository;
 
-    public AdressRepository(IAdressJpaRepository addressJpaRepository) {
+    public AddressRepository(IAdressJpaRepository addressJpaRepository) {
         this.addressJpaRepository = addressJpaRepository;
     }
 

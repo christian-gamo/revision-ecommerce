@@ -6,11 +6,13 @@ import com.cpg.pprojects.ecommerce.domain.cartItem.repository.ICartItemRepositor
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities.CartEntity;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities.CartItemEntity;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_repository.ICartItemJpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class CartItemRepository implements ICartItemRepository {
     ICartItemJpaRepository cartItemJpaRepository;
 

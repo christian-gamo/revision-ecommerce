@@ -4,12 +4,14 @@ import com.cpg.pprojects.ecommerce.domain.cart.model.Cart;
 import com.cpg.pprojects.ecommerce.domain.cart.repository.ICartRepository;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_entities.CartEntity;
 import com.cpg.pprojects.ecommerce.infrastructure.db.jpa_repository.ICartJpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Repository
 public class CartRepository implements ICartRepository {
 
     ICartJpaRepository cartJpaRepository;
