@@ -22,7 +22,8 @@ public class CartItemRepository implements ICartItemRepository {
 
     @Override
     public Optional<CartItem> findById(Long id) {
-        return Optional.empty();
+
+        return cartItemJpaRepository.findById(id).map(CartItemEntity::toCartItem);
     }
 
     @Override
